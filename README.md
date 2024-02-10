@@ -12,7 +12,7 @@ chmod +x connect.sh
 Open a new terminal to add data. Must add data first to create a topic for kafka before it can run consumers.
 ```console
 docker exec -it postgres sh
-# psql -U postgres -d movies_db -a -f execute.sql
+#: psql -U postgres -d movies_db -a -f execute.sql
 ```
 Go back to the original terminal, download the necessary packages and run the consumer.
 ```console
