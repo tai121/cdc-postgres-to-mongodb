@@ -3,7 +3,6 @@ import json
 from bson import ObjectId   
 import base64
 
-# # Define MongoDB connection parameters
 mongouri = "mongodb://user:pass@localhost:27017/"
 db_name = "postgredata"
 collection_name = "movie"
@@ -21,17 +20,7 @@ conf = {'bootstrap.servers': 'localhost:9092',
 consumer = Consumer(conf)
 running = True
 
-        
-# class PostgredataDAO:
-#     @staticmethod
-#     def add_topic(topic,database):
-#         topic_dict = {
-#             "course_id": topic.course_id,
-#             "topic": topic.topic
-#         }
-#         result = database[collection_name].insert_one(topic_dict)
-#         _id = result.inserted_id
-#         return _id
+
 def get_float(number):
     decoded_bytes = base64.b64decode(number['value'])
     result = float(''.join(str(ord(char)) for char in decoded_bytes.decode("utf-8")))
